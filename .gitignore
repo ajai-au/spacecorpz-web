@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+# Virtual Environments
+venv/
+.env
+*.env
+
+# Dependency management
+poetry.lock
+pip-log.txt
+
+# Logs and databases
+logs/
+*.log
+*.sqlite3
+*.db
+
+# Docker
+.dockerignore
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# *.pyc
+
+/volumes/food_data/
+/volumes/exercise/media/
+
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.env
+.git/
+.vscode/
+.idea/
+tests/

@@ -1,0 +1,339 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SPACECORPZ</title>
+    <meta name="description" content="Frequently asked questions about SPACECORPZ drones, technical specifications, support, and services. Find answers to common inquiries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffff'/></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="nav-logo">
+                <span class="logo-icon">⟐</span>
+                SPACECORPZ AEROSPACE
+            </a>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+                <li><a href="{% url 'gallery-page' %}" class="nav-link">Gallery</a></li>
+                <li><a href="{% url 'news-page' %}" class="nav-link">News</a></li>
+                <li><a href="{% url 'faq-page' %}" class="nav-link">FAQ</a></li>
+                <li><a href="{% url 'contact-page' %}" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">☀️</span>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Frequently Asked Questions</h1>
+                <p class="page-subtitle">Find answers to common questions about our drone technology</p>
+            </div>
+        </section>
+
+        <section class="faq-search">
+            <div class="container">
+                <div class="search-box">
+                    <input type="text" id="faqSearch" placeholder="Search FAQ..." class="search-input">
+                    <div class="search-icon">🔍</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-categories">
+            <div class="container">
+                <div class="category-tabs">
+                    <button class="category-tab active" data-category="all">All Questions</button>
+                    <button class="category-tab" data-category="general">General</button>
+                    <button class="category-tab" data-category="technical">Technical</button>
+                    <button class="category-tab" data-category="support">Support</button>
+                    <button class="category-tab" data-category="legal">Legal & Regulations</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-grid">
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <h3>What makes SPACECORPZ drones different from competitors?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>SPACECORPZ drones feature proprietary AI-powered flight systems, military-grade construction, and industry-leading flight times. Our advanced obstacle avoidance technology and secure encrypted communications set us apart in the market. Each drone undergoes rigorous testing to ensure reliability in challenging conditions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <h3>Which drone is right for my needs?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our recommendation depends on your specific use case:
+                            <br>• <strong>Consumer Series:</strong> Perfect for photography, recreational flying, and content creation
+                            <br>• <strong>Commercial Series:</strong> Ideal for surveying, inspection, agriculture, and delivery applications
+                            <br>• <strong>Military Series:</strong> Designed for defense, surveillance, and tactical operations
+                            <br>• <strong>Racing Series:</strong> Built for competitive racing and extreme maneuverability</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>What is the maximum flight time for SPACECORPZ drones?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Flight times vary by model:
+                            <br>• Consumer drones: Up to 30 minutes
+                            <br>• Commercial drones: Up to 45 minutes
+                            <br>• Military drones: Up to 8 hours with extended battery systems
+                            <br>Actual flight time depends on weather conditions, payload, and flight patterns.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>What kind of cameras do your drones use?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our drones feature state-of-the-art imaging systems:
+                            <br>• 4K HDR recording at 60fps
+                            <br>• Mechanical 3-axis gimbal stabilization
+                            <br>• Advanced low-light performance
+                            <br>• RAW photo capture for professional editing
+                            <br>• Thermal imaging options for commercial models
+                            <br>• Live streaming capabilities with up to 1080p resolution</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>What warranty do you provide?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>All SPACECORPZ drones come with comprehensive warranty coverage:
+                            <br>• 2-year manufacturer warranty on all components
+                            <br>• 6-month accidental damage protection
+                            <br>• Free firmware updates and feature additions
+                            <br>• Global service network for repairs and maintenance
+                            <br>• Extended warranty options available for commercial customers</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>Do you offer training and certification programs?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer comprehensive training programs:
+                            <br>• Online certification courses for all skill levels
+                            <br>• In-person training at our facilities
+                            <br>• Custom training programs for enterprise clients
+                            <br>• Maintenance and repair workshops
+                            <br>• Regulatory compliance training
+                            <br>• Continuing education for advanced operations</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="legal">
+                        <div class="faq-question">
+                            <h3>Do I need a license to operate an SPACECORPZ drone?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Licensing requirements vary by country and use case:
+                            <br>• <strong>USA:</strong> Part 107 Remote Pilot Certificate for commercial use
+                            <br>• <strong>EU:</strong> EU Drone Competency Certificate required
+                            <br>• <strong>Recreational use:</strong> Basic registration may be required
+                            <br>• We provide guidance on local regulations and compliance requirements
+                            <br>• Our training programs include regulatory education</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="legal">
+                        <div class="faq-question">
+                            <h3>What are the flight restrictions I should know about?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Common flight restrictions include:
+                            <br>• No-fly zones around airports and military bases
+                            <br>• Maximum altitude limits (typically 400ft/120m)
+                            <br>• Visual line of sight requirements
+                            <br>• Privacy considerations over private property
+                            <br>• Weather and visibility limitations
+                            <br>• Our mobile app includes real-time airspace information and restrictions</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>How secure are your drone communications?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Security is our top priority:
+                            <br>• AES-256 encryption for all data transmission
+                            <br>• Secure authentication protocols
+                            <br>• Anti-jamming frequency hopping
+                            <br>• Local data storage with encrypted backups
+                            <br>• Regular security audits and updates
+                            <br>• Compliance with international security standards</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>How do I get technical support?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer multiple support channels:
+                            <br>• 24/7 online chat support
+                            <br>• Phone support: +1 (555) 987-6543
+                            <br>• Email: support@SPACECORPZ.com
+                            <br>• Video call technical assistance
+                            <br>• On-site support for enterprise customers
+                            <br>• Comprehensive online knowledge base and video tutorials</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="general">
+                        <div class="faq-question">
+                            <h3>Can I upgrade my drone's firmware and features?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our drones receive regular updates:
+                            <br>• Automatic over-the-air firmware updates
+                            <br>• New features and capabilities added regularly
+                            <br>• Performance optimizations and bug fixes
+                            <br>• Mobile app updates with enhanced functionality
+                            <br>• Hardware upgrade options for certain components
+                            <br>• Update notifications and installation assistance</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>What happens if my drone loses connection?</h3>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our drones have multiple failsafe systems:
+                            <br>• Automatic return-to-home (RTH) activation
+                            <br>• GPS-guided emergency landing procedures
+                            <br>• Battery level monitoring and auto-landing
+                            <br>• Obstacle avoidance during emergency return
+                            <br>• Signal strength indicators and warnings
+                            <br>• Configurable failsafe behaviors in the mobile app</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No results found</h3>
+                    <p>Try searching with different keywords or <a href="contact.html">contact our support team</a> for help.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-contact">
+            <div class="container">
+                <div class="contact-card">
+                    <h2>Still have questions?</h2>
+                    <p>Our expert support team is here to help you with any specific inquiries.</p>
+                    <div class="contact-options">
+                        <a href="contact.html" class="SPACECORPZ">Contact Support</a>
+                        <a href="tel:+15559876543" class="cta-button secondary">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SPACECORPZ</h3>
+                    <p>Pioneering the future of aerial technology with innovative drone solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 00-3-3H4a3 3 0 00-3 3v10a3 3 0 003 3h16a3 3 0 003-3V7zM10 15V9l6 3-6 3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="gallery.html">Consumer Drones</a></li>
+                        <li><a href="gallery.html">Commercial UAVs</a></li>
+                        <li><a href="gallery.html">Military Solutions</a></li>
+                        <li><a href="gallery.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="news.html">About Us</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Technical Support</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SPACECORPZ AEROSPACE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'script.js' %}"></script>
+
+    <script src="{% static 'faq.js' %}"></script>
+
+</body>
+</html>

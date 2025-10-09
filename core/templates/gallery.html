@@ -1,0 +1,321 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Gallery - SPACECORPZ</title>
+    <meta name="description" content="Explore our comprehensive collection of advanced drones and UAV technology. View specifications, images, and videos of our cutting-edge aerial vehicles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffff'/></svg>">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="nav-logo">
+                <span class="logo-icon">⟐</span>
+                SPACECORPZ AEROSPACE
+            </a>
+            <ul class="nav-menu">
+                <li><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+                <li><a href="{% url 'gallery-page' %}" class="nav-link">Gallery</a></li>
+                <li><a href="{% url 'news-page' %}" class="nav-link">News</a></li>
+                <li><a href="{% url 'faq-page' %}" class="nav-link">FAQ</a></li>
+                <li><a href="{% url 'contact-page' %}" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">☀️</span>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Drone Gallery</h1>
+                <p class="page-subtitle">Explore our cutting-edge collection of advanced aerial vehicles</p>
+            </div>
+        </section>
+
+        <section class="gallery-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="consumer">Consumer</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="military">Military</button>
+                    <button class="filter-btn" data-filter="racing">Racing</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="consumer">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ X1 Consumer Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ X1</h3>
+                                <p>Consumer Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="commercial">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ Pro Commercial Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ Pro</h3>
+                                <p>Commercial Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="military">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/18069329/pexels-photo-18069329/free-photo-of-drone-flying-over-forest.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ Tactical Military Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ Tactical</h3>
+                                <p>Military Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="racing">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/724921/pexels-photo-724921.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ Velocity Racing Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ Velocity</h3>
+                                <p>Racing Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="consumer">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ Mini Consumer Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ Mini</h3>
+                                <p>Consumer Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="commercial">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ Survey Commercial Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ Survey</h3>
+                                <p>Commercial Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item video-item" data-category="commercial">
+                        <div class="gallery-image">
+                            <video autoplay muted loop>
+                                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                            </video>
+                            <div class="gallery-overlay">
+                                <h3>Flight Demo</h3>
+                                <p>Commercial Flight Test</p>
+                                <button class="view-details">Watch Full</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-category="military">
+                        <div class="gallery-image">
+                            <img src="https://images.pexels.com/photos/2480807/pexels-photo-2480807.jpeg?auto=compress&cs=tinysrgb&w=800" alt="SPACECORPZ Stealth Military Drone">
+                            <div class="gallery-overlay">
+                                <h3>SPACECORPZ Stealth</h3>
+                                <p>Military Series</p>
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="specifications">
+            <div class="container">
+                <h2 class="section-title">Technical Specifications</h2>
+                <div class="spec-tabs">
+                    <button class="spec-tab active" data-tab="consumer">Consumer</button>
+                    <button class="spec-tab" data-tab="commercial">Commercial</button>
+                    <button class="spec-tab" data-tab="military">Military</button>
+                </div>
+                
+                <div class="spec-content active" id="consumer">
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <h4>Flight Time</h4>
+                            <p>Up to 30 minutes</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Max Speed</h4>
+                            <p>65 km/h</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Range</h4>
+                            <p>10 km transmission</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Camera</h4>
+                            <p>4K HDR recording</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Weight</h4>
+                            <p>895g</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Operating Temperature</h4>
+                            <p>-10°C to 40°C</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spec-content" id="commercial">
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <h4>Flight Time</h4>
+                            <p>Up to 45 minutes</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Max Speed</h4>
+                            <p>90 km/h</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Range</h4>
+                            <p>15 km transmission</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Payload</h4>
+                            <p>Up to 6kg</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Weight</h4>
+                            <p>4.2kg</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Wind Resistance</h4>
+                            <p>Up to 15 m/s</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="spec-content" id="military">
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <h4>Flight Time</h4>
+                            <p>Up to 8 hours</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Max Speed</h4>
+                            <p>150 km/h</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Range</h4>
+                            <p>100 km BVLOS</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Encryption</h4>
+                            <p>Military-grade AES-256</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Stealth Rating</h4>
+                            <p>Low RCS design</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Operating Altitude</h4>
+                            <p>Up to 7,500m</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SPACECORPZ</h3>
+                    <p>Pioneering the future of aerial technology with innovative drone solutions.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24"><path d="M23 7a3 3 0 00-3-3H4a3 3 0 00-3 3v10a3 3 0 003 3h16a3 3 0 003-3V7zM10 15V9l6 3-6 3z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="gallery.html">Consumer Drones</a></li>
+                        <li><a href="gallery.html">Commercial UAVs</a></li>
+                        <li><a href="gallery.html">Military Solutions</a></li>
+                        <li><a href="gallery.html">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="news.html">About Us</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Technical Support</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SPACECORPZ AEROSPACE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'gallery.js' %}"></script>
+
+
+</body>
+</html>
