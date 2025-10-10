@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" media="screen" href=" {% static 'css/styles.css' %}">
+    
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 
 
@@ -20,17 +22,21 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
+        <div class="nav-container" >
             <a href="{% url 'home' %}"class="nav-logo">
                 <span class="logo-icon">⟐</span>
                 SPACECORPZ AEROSPACE
             </a>
             <ul class="nav-menu">
-                <li><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+                <li>
+                    <a href="{% url 'home' %}" class="nav-link active">Home</a>
+                </li>
                 <li><a href="{% url 'gallery-page' %}" class="nav-link">Gallery</a></li>
                 <li><a href="{% url 'news-page' %}" class="nav-link">News</a></li>
                 <li><a href="{% url 'faq-page' %}" class="nav-link">FAQ</a></li>
                 <li><a href="{% url 'contact-page' %}" class="nav-link">Contact</a></li>
+                <li><a href="{% url 'solar_system_page' %}" class="nav-link">Solar System</a></li>
+
             </ul>
             <div class="nav-controls">
                 <button class="theme-toggle" id="themeToggle">
@@ -195,6 +201,8 @@
     </footer>
 
     <script src="{% static 'script.js' %}"></script>
+    <!-- <script src="{% static 'js/prefixfree.min.js' %}"></script>
+    <script src="{% static 'js/scripts.min.js' %}"></script> -->
 
         
 </body>

@@ -38,3 +38,15 @@ def contact_view(request):
     #     'posts': Post.objects.all()
     # }
     return render(request, 'contact.html')
+
+def solar_system_view(request):
+    # context = {
+    #     'posts': Post.objects.all()
+    # }
+    return render(request, 'solar_system.html')
+
+def solar_system_testview(request):
+    # context = {
+    #     'posts': Post.objects.all()
+    # }
+    return render(request, 'solar_test.html')

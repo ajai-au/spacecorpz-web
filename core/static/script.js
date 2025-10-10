@@ -415,6 +415,7 @@ class SPACECORPZ {
         this.initSmoothScrolling();
         this.bindEvents();
     }
+    
 
     initTheme() {
         const body = document.body;
@@ -467,17 +468,17 @@ class SPACECORPZ {
             navToggle.style.display = 'flex';
             
             navToggle.addEventListener('click', () => {
-                console.log('Menu toggle clicked'); // Debug log
+                // console.log('Menu toggle clicked'); // Debug log
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
                 
                 // Prevent body scroll when menu is open
                 if (navMenu.classList.contains('active')) {
                     document.body.style.overflow = 'hidden';
-                    console.log('Menu opened'); // Debug log
+                    // console.log('Menu opened'); // Debug log
                 } else {
                     document.body.style.overflow = '';
-                    console.log('Menu closed'); // Debug log
+                    // console.log('Menu closed'); // Debug log
                 }
             });
             
