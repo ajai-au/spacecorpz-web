@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services - SPACECORPZ AEROSPACE</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Products & Services</h1>
+                <p class="page-subtitle">Indigenous Aerospace Technologies Built in India</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container narrow">
+                <div class="about-content">
+                    <p>
+                        At <strong>SPACECORPZ AEROSPACE PRIVATE LIMITED</strong>,  we’re working with one goal in mind to build our own Indian-made aerospace systems that truly serve people & industries. Right now, we’re developing our multipurpose unmanned & manned aerial vehicle system that’s fully designed & built in India. It’s made to work in real Indian conditions & to support areas like farming, logistics, infrastructure, public safety & defense.
+                    </p>
+                    <p>
+                        We’re building multipurpose unmanned and manned aerial vehicle systems engineered
+                        entirely in India, capable of performing in real Indian conditions  supporting agriculture,
+                        logistics, infrastructure, public safety, and defense.
+                    </p>
+                    <p>
+                        Collaboration with local manufacturers, engineers, and research institutions defines our process.
+                        We believe innovation grows when knowledge stays within the nation, empowering every Indian hand that builds it.
+                    </p>
+                    <!-- <img src="{% static 'images/lab1.jpg' %}" alt="Aerospace Research Lab"> -->
+                </div>
+            </div>
+        </section>
+
+        <div class="futuristic-divider"></div>
+
+        <!-- Services Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>✈️ Indigenous Aircraft Design & Analysis</h3>
+                        <p>Comprehensive design and performance optimization for unmanned and manned aerial systems.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔩 Structural Design & Stress Analysis</h3>
+                        <p>Advanced structural design and simulation for both metallic and composite airframes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚙️ Systems Integration & Avionics</h3>
+                        <p>Custom avionics and integrated system solutions for seamless operational performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🏭 Manufacturing Support & Tooling</h3>
+                        <p>Full-scale support for precision manufacturing and tooling for aerospace components.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🧮 CAD, CAM & PLM</h3>
+                        <p>Comprehensive digital design, engineering, and lifecycle management services.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🚀 Engine & Propulsion System Design</h3>
+                        <p>Indigenous propulsion research and design for advanced efficiency and performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🌪️ Aerodynamic Simulation & CFD</h3>
+                        <p>Computational fluid dynamics and flow optimization for better performance and stability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🛩️ Aerostructure Design & Analysis</h3>
+                        <p>Innovative lightweight structure designs optimized for endurance and durability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🧱 Metallic & Composite Material Design</h3>
+                        <p>Expertise in developing high-performance materials for modern aerospace systems.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🧠 Computational Fluid Dynamics (CFD)</h3>
+                        <p>Simulation-driven design for aerodynamic validation and structural improvement.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🛰️ Flight Support Services</h3>
+                        <p>End-to-end testing, maintenance, and flight operations assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'footer.html' %}
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

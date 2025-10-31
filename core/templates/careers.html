@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - SPACECORPZ AEROSPACE</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+<main>
+
+    <!-- Futuristic Hero Banner -->
+    <section class="page-header">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Careers</h1>
+            <p class="page-subtitle">Join our mission to build India's aerospace future 🚀</p>
+        </div>
+    </section>
+
+    <section class="careers-intro">
+        <div class="container split">
+            <div class="text">
+                <h2 class="section-title">Be Part of the Dream</h2>
+                <p>
+                    At <strong>SPACECORPZ AEROSPACE PRIVATE LIMITED</strong>, we’re not just building a company
+                    we’re building India’s space future. Our goal is to make India known for Indigenous Aerospace
+                    Manufacturing & Exporting, fully designed & built by our own hands.
+                </p>
+                <p>
+                    If you believe in innovation, teamwork, and nation-building  we’d love to have you on our crew.
+                </p>
+            </div>
+            <div class="image">
+                <img src="{% static 'images/career_team.jpg' %}" alt="Team working on aerospace project">
+            </div>
+        </div>
+    </section>
+
+    <section class="careers-qualifications gradient-bg">
+        <div class="container split reverse">
+            <div class="image">
+                <img src="{% static 'images/engineer.avif' %}" alt="Aerospace engineer at work">
+            </div>
+            <div class="text">
+                <h2 class="section-title">Qualifications</h2>
+                <p>
+                    We’re looking for individuals with strong technical knowledge & hands-on experience in the aerospace field.
+                    You should hold an undergraduate degree or technical diploma in engineering or related streams.
+                </p>
+                <p>
+                    We welcome both experienced professionals & young talents who’re ready to learn, explore & grow with us as we move forward together.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="careers-benefits">
+        <div class="container narrow">
+            <h2 class="section-title">Benefits & Growth</h2>
+            <ul class="benefits-list">
+                <li>Competitive salaries for every role</li>
+                <li>Travel allowance for official duties</li>
+                <li>Employee Stock Ownership Plan (ESOP)</li>
+                <li>Opportunity to grow with a pioneering Indian aerospace startup</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="careers-join">
+        <div class="container split">
+            <div class="text">
+                <h2 class="section-title">Join Our Journey</h2>
+                <p>
+                    If you wish to be part of India’s aerospace story, fill out the form below.
+                    Our team will get in touch once your profile is reviewed.
+                </p>
+                <p>
+                    We post new openings regularly, so stay connected as we expand our mission — step by step, skyward.
+                </p>
+            </div>
+            <div class="image">
+                <img src="{% static 'images/rocket_launch.webp' %}" alt="Rocket launch at night">
+            </div>
+        </div>
+    </section>
+
+    <section class="application-form">
+        <div class="container narrow">
+            <h2 class="section-title">Application Form</h2>
+            <form method="POST" class="contact-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_contact">Email & Contact Number</label>
+                    <input type="text" id="email_contact" name="email_contact" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="qualification">Educational Qualification</label>
+                    <input type="text" id="qualification" name="qualification" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest">Area of Interest or Role You’re Applying For</label>
+                    <input type="text" id="interest" name="interest" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Short Summary About Your Experience or Skills</label>
+                    <textarea id="experience" name="experience" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Why Do You Wish to Join With Us</label>
+                    <textarea id="reason" name="reason" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+
+    {% include 'footer.html' %}
+    <script src="{% static 'script.js' %}"></script>
+
+
+</body>
+</html>

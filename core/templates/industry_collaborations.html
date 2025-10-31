@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry & Research Collaborations - SPACECORPZ</title>
+  <meta name="description" content="Collaborating with Indian industries, research organizations, and innovators to advance Indigenous Aerospace Manufacturing & Research.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffff'/></svg>">
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+    
+  <!-- Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">INDUSTRY & RESEARCH COLLABORATIONS</h1>
+      <!-- <p class="page-subtitle">
+        Building together for India’s Aerospace Future — Collaboration over Competition.
+      </p> -->
+    </div>
+  </section>
+
+  <!-- Collaboration Content -->
+  <main>
+    <section class="about-section">
+      <div class="container narrow">
+        <!-- <h2 class="section-title">Collaborating for Indian Innovation</h2> -->
+        <p>
+            <br>
+            
+          At <strong>SPACECORPZ AEROSPACE PRIVATE LIMITED</strong>, we believe India’s real strength is in its people, 
+          knowledge & teamwork. We’re building our company on collaboration, not competition. 
+          Our aim is to bring together Indian manufacturers, suppliers, designers, skilled engineers & research groups 
+          who share the same dream of developing our own aerospace technologies.
+        </p>
+
+        <p>
+          We’re looking to collaborate with industries & research organisations that can support the growth of 
+          Indigenous Aerospace Manufacturing & Exporting. We welcome partnerships with component makers, structure manufacturers, 
+          system developers, & technology solution providers from across India.
+        </p>
+
+        <p>
+          We’re also open to working with government agencies, research centres & universities to share knowledge & explore 
+          new ideas in aerospace development. Our team truly values collaboration with institutions like the 
+          <strong>Indian Space Research Organisation (ISRO)</strong>, <strong>Defence Research & Development Organisation (DRDO)</strong>, 
+          <strong>National Aerospace Laboratories (NAL)</strong>, and other national research bodies that represent India’s scientific excellence.
+        </p>
+
+        <p>
+          We invite scientists, engineers, innovators & students who believe in Indian innovation to join us in creating 
+          a stronger aerospace ecosystem. Together, we can build the future of Indian aerospace — 
+          <strong>made in India, designed in India & built for the world.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Collaboration Partners Section -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">Our Collaboration Focus Areas</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🏭</div>
+            <h3>Industrial Partnerships</h3>
+            <p>Collaborations with Indian manufacturers, suppliers, and system integrators to strengthen local production.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3>Research & Innovation</h3>
+            <p>Working with universities and research centers to co-develop technologies in aerospace materials, propulsion, and AI-based systems.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3>Technology Development</h3>
+            <p>Partnering with R&D organizations for simulation, testing, and product validation of aerospace components.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Knowledge Sharing</h3>
+            <p>Creating open collaboration channels for engineers, startups, and innovators to share ideas and contribute to national growth.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Form -->
+    <section class="contact-section fade-in">
+      <div class="container">
+        <h2 class="section-title">Start Collaboration</h2>
+        <p class="text-center">Share your interest with us — let’s build the future together.</p>
+
+        {% if success %}
+          <div class="success-message">✅ Your collaboration request has been sent successfully!</div>
+        {% endif %}
+
+        <form method="POST" class="contact-form">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company or Organisation Name</label>
+            <input type="text" name="company" id="company" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="interest">Area You’re Interested to Collaborate In</label>
+            <input type="text" name="interest" id="interest" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Short Note About How You’d Like to Collaborate With Us</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Submit Collaboration</button>
+        </form>
+      </div>
+    </section>
+
+
+  </main>
+
+  {% include 'footer.html' %}
+  
+    <!-- JS -->
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

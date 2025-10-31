@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Blog - SPACECORPZ AEROSPACE</title>
+    <meta name="description" content="Latest news, insights, and updates from SPACECORPZ. Stay informed about drone technology advances, industry trends, and company announcements.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffff'/></svg>">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+  <main>
+      <header class="page-header">
+        <h1 class="page-title fade-in">About Us</h1>
+        <p class="page-subtitle fade-in">
+          Building India's aerospace future designed, developed, and made in India.
+        </p>
+      </header>
+        
+    <section class="about-section fade-in">
+    <div class="container narrow">
+      <div class="about-content">
+        <h2 class="section-title">Our Story</h2>
+        <p>
+          We started <strong>SPACECORPZ AEROSPACE PRIVATE LIMITED</strong> with one clear dream 
+          to make India self-reliant in aerospace technology. From the very beginning, 
+          we’ve believed our country has the talent and courage to design & build its own advanced systems.
+        </p>
+
+        <p>
+          Our purpose is to create Indian-made aerospace products that can serve real needs 
+          in agriculture, logistics, infrastructure, disaster response, and national safety.
+        </p>
+
+        <p>
+          We’re a small team with big determination. We’ve spent years learning, designing, and 
+          testing ideas that can truly help people & industries. Every part of our work is 
+          developed in India with our own effort and strong collaboration with Indian 
+          manufacturers, local suppliers, and technical experts.
+        </p>
+
+        <p>
+          Our first project is an intelligent unmanned aerial system being built completely in India. 
+          It’s designed to work in real Indian conditions and to deliver reliable performance 
+          for both public & commercial uses.
+        </p>
+
+        <p>
+          <strong>SPACECORPZ AEROSPACE PRIVATE LIMITED</strong> was founded in Kochi, Kerala with 
+          a strong goal of promoting Indigenous Aerospace Manufacturing & Exporting. We’re deeply 
+          committed to working hand in hand with Indian & local manufacturers to build a trusted 
+          supply chain that supports our nation’s growth in aerospace.
+        </p>
+
+        <p>
+          We believe technology should grow from our soil and fly under our own flag. 
+          With every step forward, we carry the same spirit of Indian innovation, 
+          Indian capability, and Indian pride.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Our Mission & Vision</h2>
+      <div class="features-grid">
+        <div class="feature-card slide-in-left">
+          <div class="feature-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>
+            To design and manufacture advanced, indigenous aerospace systems that empower India’s 
+            technological independence and serve critical needs across diverse sectors.
+          </p>
+        </div>
+        <div class="feature-card slide-in-right">
+          <div class="feature-icon">🌍</div>
+          <h3>Our Vision</h3>
+          <p>
+            To make India a global leader in aerospace innovation creating technology 
+            that is homegrown, reliable, and sustainable for generations to come.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <!-- <section class="stats">
+    <div class="container text-center">
+      <h2 class="section-title">Our Spirit</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Made in India</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years of R&D</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Innovation Drive</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Unified Goal</div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  
+    </main>
+
+   {% include 'footer.html' %}
+
+        <script src="{% static 'script.js' %}"></script>
+
+    <!-- <script src="news.js"></script> -->
+
+</body>
+</html>

@@ -400,7 +400,10 @@
 // }
 
 
-// Main JavaScript for AeroDyne Website
+// Main JavaScript for Website
+
+
+
 class SPACECORPZ {
     constructor() {
         this.isLightMode = localStorage.getItem('lightMode') === 'true';
@@ -465,7 +468,7 @@ class SPACECORPZ {
         
         if (navToggle && navMenu) {
             // Show the toggle button on mobile
-            navToggle.style.display = 'flex';
+            // navToggle.style.display = 'flex';
             
             navToggle.addEventListener('click', () => {
                 // console.log('Menu toggle clicked'); // Debug log
@@ -509,17 +512,28 @@ class SPACECORPZ {
         this.initNavbarScroll();
     }
 
-    setActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
-    }
+setActiveNavLink() {
+    const currentPath = window.location.pathname
+        .replace(/^\/+|\/+$/g, ''); // remove leading/trailing slashes
+
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        const linkUrl = new URL(link.href);
+        const linkPath = linkUrl.pathname.replace(/^\/+|\/+$/g, '');
+
+        // Remove active first
+        link.classList.remove('active');
+
+        // Mark active if paths match
+        if (
+            currentPath === linkPath ||
+            (currentPath === '' && linkPath === '') // Home page (/)
+        ) {
+            link.classList.add('active');
+        }
+    });
+}
 
     initNavbarScroll() {
         const navbar = document.querySelector('.navbar');
