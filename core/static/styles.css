@@ -1254,14 +1254,13 @@ body.dark-mode .contact-form textarea:focus {
   transition: all var(--transition-fast);
 }
 
-.category-tab:hover,
+/* .category-tab:hover,
 .category-tab.active {
-  /* background: var(--primary-color);
-   */
+
   background: #273232;
   color: white;
   border-color: var(--primary-color);
-}
+} */
 
 .faq-section {
   padding: var(--spacing-16) 0;
@@ -1399,7 +1398,7 @@ body.dark-mode .contact-form textarea:focus {
 }
 
 .featured-news {
-  padding: var(--spacing-16) 0;
+  padding: var(--spacing-4) 0;
 }
 
 .featured-article {
@@ -2132,3 +2131,482 @@ body.dark-mode .contact-form textarea:focus {
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             margin-top: 30px;
         }
+
+
+
+
+/* --------------------- */
+
+/* === FUTURISTIC HERO SECTION === */
+.futuristic-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+/* .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.2), rgba(0,0,0,0.9));
+} */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+}
+
+/* .hero-title .highlight {
+    color: var(--accent-blue);
+}
+
+.glow {
+    text-shadow: 0 0 20px var(--accent-blue), 0 0 40px var(--accent-cyan);
+} */
+
+/* === ABOUT SECTION === */
+.about-section {
+    padding: 100px 0;
+    background: var(--bg-dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-top: 1rem;
+    color: var(--text-muted);
+}
+
+.rounded-image {
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,255,255,0.15);
+    width: 100%;
+}
+
+/* === FEATURES GLASS STYLE === */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+.glass-card img {
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* === STORY SECTION === */
+.story-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--bg-dark), var(--bg-darker));
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    align-items: center;
+}
+
+.story-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+
+/* ===== CAREER PAGE SECTIONS ===== */
+.split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 80px 0;
+}
+
+.split.reverse {
+    flex-direction: row-reverse;
+}
+
+.split .text, .split .image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.split .image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.split .image img:hover {
+    transform: scale(1.05);
+}
+
+/* Section Backgrounds */
+.gradient-bg {
+    background: linear-gradient(180deg, rgba(10,20,40,0.9), rgba(0,0,0,0.95));
+}
+
+.careers-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.careers-benefits li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.careers-benefits li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .split, .split.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+    .split .image img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* === Collaboration Popup === */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 20, 40, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 999;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: var(--bg-darker);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  max-width: 400px;
+  color: var(--text-light);
+  animation: popupIn 0.4s ease;
+}
+
+.popup-content h3 {
+  color: var(--accent-cyan);
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  color: var(--text-muted);
+}
+
+@keyframes popupIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+.contact-form select,
+.contact-form input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form select:focus,
+.contact-form input[type="datetime-local"]:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+
+
+/* Dark / Futuristic dropdown styling */
+.contact-form select {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+/* Focus glow effect */
+.contact-form select:focus {
+  border-color: var(--accent-color);
+  background: rgba(0, 255, 255, 0.1);
+  outline: none;
+}
+
+/* Dropdown menu background (dark mode fix) */
+.contact-form select option {
+  background-color: #0d1117; /* dark background for dropdown */
+  color: #e0e0e0;           /* light text */
+}
+
+/* Optional hover color for better UX */
+.contact-form select option:hover {
+  background-color: #111827;
+}
+
+
+/* Navbar Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+}
+
+.nav-logo .logo-img {
+  height: 50px;              /* adjust as needed */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Optional hover effect (futuristic glow) */
+.nav-logo:hover .logo-img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.7));
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .nav-logo .logo-img {
+    height: 40px;
+  }
+}
+
+
+
+.article-image img {
+  object-fit: cover;
+  height: 100%;
+}
+
+
+  .article-image {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000; /* optional, makes borders neat */
+  }
+
+  .article-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* <— shows full image */
+    border-radius: 12px; /* keep your rounded corners */
+  }
+
+  /* Optional: if you want to limit image height so very tall images don’t break layout */
+  .featured-article .article-image img {
+    max-height: 480px;
+  }
+
+    .article-preview,
+    .full-article {
+      transition: all 0.3s ease;
+    }
+
+    .full-article {
+      display: none;
+      color: #ccc;
+      line-height: 1.6;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .featured-news.expanded .article-preview {
+      display: none;
+    }
+
+    .featured-news.expanded .full-article {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 1rem;
+      cursor: pointer;
+      color: var(--accent-color, cyan);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .read-more:hover {
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pagination centered cleanly */
+/* Centered pagination with visible buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.pagination a,
+.pagination span {
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid cyan;          /* accent borbtn-nextder */
+  background: rgba(255, 255, 255, 0.05); /* translucent dark bg */
+  color: white;                    /* visible on dark bg */
+}
+
+.pagination a:hover {
+  background: cyan;                /* accent hover */
+  color: #000;                     /* readable text on cyan */
+}
+
+.pagination .page-info {
+  color: #ccc;                     /* subtle page indicator */
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+
+/* Feature icons: unified size, neon gradient + subtle glow */
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 6px 30px rgba(0, 255, 255, 0.06);
+  transition: transform 250ms var(--transition-fast), box-shadow 250ms var(--transition-fast);
+}
+
+.feature-icon svg {
+  width: 52px;
+  height: 52px;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,255,255,0.06));
+}
+
+/* hover pop and glow */
+.feature-card:hover .feature-icon {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 255, 255, 0.12), 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.feature-card h3 {
+  margin-top: 0.4rem;
+  /* color: var(--text-primary); */
+}
+
+/* smaller devices */
+@media (max-width: 760px) {
+  .feature-icon {
+    width: 72px;
+    height: 72px;
+  }
+  .feature-icon svg {
+    width: 44px;
+    height: 44px;
+  }
+}

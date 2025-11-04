@@ -1,7 +1,9 @@
+    {% load static %}
+    
     <nav class="navbar">
         <div class="nav-container" >
             <a href="{% url 'home' %}"class="nav-logo">
-                <span class="logo-icon">⟐</span>
+                  <img src="{% static 'images/logo1.png' %}" alt="SPACECORPZ AEROSPACE Logo" class="logo-img">
                 SPACECORPZ AEROSPACE
             </a>
             <ul class="nav-menu">
@@ -20,7 +22,6 @@
                 <li><a href="{% url 'news-page' %}" class="nav-link">News</a></li>
                 <li><a href="{% url 'about_us_page' %}" class="nav-link">About Us</a></li>
                 <li><a href="{% url 'contact-page' %}" class="nav-link">Contact</a></li>
-
  
 
             </ul>

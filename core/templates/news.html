@@ -26,7 +26,7 @@
             </div>
         </section>
 
-        <section class="news-filters">
+        <!-- <section class="news-filters">
             <div class="container">
                 <div class="filter-controls">
                     <div class="filter-buttons">
@@ -42,155 +42,81 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="featured-news">
+            <section class="news-list">
+      <div class="container">
+        <div class="grid">
+          {% for news in page_obj %}
+                  
+          <section class="featured-news fade-in">
             <div class="container">
-                <h2 class="section-title">Featured Article</h2>
-                <div class="featured-article">
-                    <div class="article-image">
-                        <img src="https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Revolutionary AI Navigation System">
-                        <div class="article-badge">Breaking</div>
-                    </div>
-                    <div class="article-content">
-                        <div class="article-meta">
-                            <span class="category">Technology</span>
-                            <span class="date">January 15, 2025</span>
-                            <span class="read-time">5 min read</span>
-                        </div>
-                        <h3>SPACECORPZ Unveils Revolutionary AI Navigation System</h3>
-                        <p>Our latest breakthrough in artificial intelligence brings autonomous navigation to a new level. The new system can adapt to changing environments in real-time, ensuring safer and more efficient flights across all conditions.</p>
-                        <a href="#" class="read-more">Read Full Article →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="news-grid-section">
-            <div class="container">
-                <div class="news-grid" id="newsGrid">
-                    <!-- News articles will be dynamically loaded here -->
-                </div>
-                
-                <!-- Loading indicator -->
-                <div class="loading" id="loadingIndicator">
-                    <div class="loading-spinner"></div>
-                    <p>Loading latest news...</p>
-                </div>
-                
-                <!-- Load more button -->
-                <div class="load-more-container">
-                    <button class="cta-button secondary" id="loadMoreBtn">Load More Articles</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sample static articles for demonstration -->
-        <div style="display: none;" id="sampleArticles">
-            <div class="news-article" data-category="industry">
+              <div class="featured-article">
                 <div class="article-image">
-                    <img src="https://images.pexels.com/photos/2876511/pexels-photo-2876511.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Drone Delivery Market Growth">
+                  <img src="{{ news.image.url }}" alt="{{ news.title }}">
                 </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Industry News</span>
-                        <span class="date">January 12, 2025</span>
-                        <span class="read-time">3 min read</span>
-                    </div>
-                    <h3>Drone Delivery Market Reaches $2.2 Billion Milestone</h3>
-                    <p>The global drone delivery market has experienced unprecedented growth, with major retailers adopting UAV solutions for last-mile delivery.</p>
-                </div>
-            </div>
 
-            <div class="news-article" data-category="company">
-                <div class="article-image">
-                    <img src="https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg?auto=compress&cs=tinysrgb&w=600" alt="New Manufacturing Facility">
-                </div>
                 <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Company Updates</span>
-                        <span class="date">January 10, 2025</span>
-                        <span class="read-time">4 min read</span>
-                    </div>
-                    <h3>SPACECORPZ Opens New Manufacturing Facility in Texas</h3>
-                    <p>Our expanded production capabilities will enable us to meet growing demand while maintaining the highest quality standards.</p>
-                </div>
-            </div>
+                  <div class="article-meta">
+                    <span class="category">{{ news.get_category_display }}</span>
+                    <span class="date">{{ news.created_at|date:"F j, Y" }}</span>
+                  </div>
+                  <h3>{{ news.title }}</h3>
 
-            <div class="news-article" data-category="technology">
-                <div class="article-image">
-                    <img src="https://images.pexels.com/photos/18069329/pexels-photo-18069329/free-photo-of-drone-flying-over-forest.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Battery Technology Breakthrough">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Technology</span>
-                        <span class="date">January 8, 2025</span>
-                        <span class="read-time">6 min read</span>
-                    </div>
-                    <h3>Next-Gen Battery Technology Extends Flight Time by 40%</h3>
-                    <p>Revolutionary lithium-graphene hybrid batteries represent a major leap forward in drone endurance and performance.</p>
-                </div>
-            </div>
+                  <!-- Short preview -->
+                  <div class="article-preview">
+                    <p>{{ news.content|truncatewords:40 }}</p>
+                    <span class="read-more">Read Full Article →</span>
+                  </div>
 
-            <div class="news-article" data-category="tutorial">
-                <div class="article-image">
-                    <img src="https://images.pexels.com/photos/724921/pexels-photo-724921.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Drone Maintenance Guide">
+                  <!-- Full content (hidden initially) -->
+                  <div class="full-article">
+                    {{ news.content|linebreaks }}
+                    <span class="read-more">↑ Hide Article</span>
+                  </div>
                 </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Tutorials</span>
-                        <span class="date">January 5, 2025</span>
-                        <span class="read-time">8 min read</span>
-                    </div>
-                    <h3>Complete Guide to Drone Maintenance and Care</h3>
-                    <p>Essential tips and procedures to keep your SPACECORPZ drone in optimal condition for years of reliable operation.</p>
-                </div>
+              </div>
             </div>
+          </section>
 
-            <div class="news-article" data-category="industry">
-                <div class="article-image">
-                    <img src="https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Regulatory Updates">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Industry News</span>
-                        <span class="date">January 3, 2025</span>
-                        <span class="read-time">5 min read</span>
-                    </div>
-                    <h3>New FAA Regulations Expand Commercial Drone Operations</h3>
-                    <p>Recent regulatory changes open new opportunities for commercial drone operators while maintaining safety standards.</p>
-                </div>
-            </div>
-
-            <div class="news-article" data-category="company">
-                <div class="article-image">
-                    <img src="https://images.pexels.com/photos/2480807/pexels-photo-2480807.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Partnership Announcement">
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">
-                        <span class="category">Company Updates</span>
-                        <span class="date">December 28, 2024</span>
-                        <span class="read-time">3 min read</span>
-                    </div>
-                    <h3>Strategic Partnership with Global Tech Giant</h3>
-                    <p>This collaboration will accelerate the development of next-generation autonomous flight systems.</p>
-                </div>
-            </div>
+          {% empty %}
+          <p>No news articles available yet.</p>
+          {% endfor %}
         </div>
 
-        <section class="newsletter-signup">
-            <div class="container">
-                <div class="newsletter-card">
-                    <h2>Never Miss an Update</h2>
-                    <p>Subscribe to our newsletter and get the latest drone technology news delivered to your inbox.</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Enter your email address" required>
-                        <button type="submit" class="SPACECORPZ">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        <!-- Pagination -->
+        <div class="pagination">
+          {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="btn-prev">← Previous</a>
+          {% endif %}
+          <span class="page-info">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="btn-next">Next →</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+      <script>
+    // Toggle full article in-place without pushing layout
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll(".featured-news").forEach(section => {
+        const readMoreButtons = section.querySelectorAll(".read-more");
+        readMoreButtons.forEach(btn => {
+          btn.addEventListener("click", () => {
+            section.classList.toggle("expanded");
+          });
+        });
+      });
+    });
+  </script>
+  </main>
+
+
+
+
+
+
 
   {% include 'footer.html' %}
 

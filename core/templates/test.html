@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACECORPZ AEROSPACE - Indigenized Future of Flight</title>
+    <meta name="description" content="SPACECORPZ AEROSPACE PRIVATE LIMITED - Building India's self-reliant aerospace ecosystem through innovation and indigenization.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'images/logo.svg' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero futuristic-hero">
+            <video autoplay muted loop class="hero-video">
+                <source src="{% static 'videos/drone_flight.mp4' %}" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title glow">
+                    CREATING AN INDIGENIZED <br>
+                    <span class="highlight">AEROSPACE ECOSYSTEM</span>
+                </h1>
+                <p class="hero-subtitle">
+                    SPACECORPZ AEROSPACE PRIVATE LIMITED — building India’s strength in aerospace through innovation, precision, and self-reliance.
+                </p>
+                <div class="hero-cta">
+                    <a href="{% url 'gallery-page' %}" class="cta-button primary">Explore Our Technology</a>
+                    <a href="{% url 'contact-page' %}" class="cta-button secondary">Collaborate With Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section">
+            <div class="container about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Our Vision</h2>
+                    <p>
+                        We began with a simple dream — to make India strong on its own aerospace path. 
+                        Indigenization isn’t just an idea for us; it’s a mission. 
+                        At SPACECORPZ AEROSPACE PRIVATE LIMITED, we design and build systems 
+                        that are fully made in India, using local talent and collaboration.
+                    </p>
+                    <p>
+                        Every project we take forward contributes to a self-reliant future — technology that’s rooted in our land and serves real-world needs.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="{% static 'images/factory_lab.jpg' %}" alt="Aerospace Lab" class="rounded-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES SECTION -->
+        <section class="features" id="features">
+            <div class="container">
+                <h2 class="section-title">Core Capabilities</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-card">
+                        <img src="{% static 'images/drone_precision.jpg' %}" alt="Precision Flight">
+                        <h3>Precision Flight</h3>
+                        <p>AI-powered navigation and obstacle avoidance with centimeter accuracy.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <img src="{% static 'images/telemetry_data.jpg' %}" alt="Telemetry Data">
+                        <h3>Real-Time Intelligence</h3>
+                        <p>Secure live telemetry, data analytics, and encrypted communications.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <img src="{% static 'images/extended_range.jpg' %}" alt="Extended Range">
+                        <h3>Extended Range</h3>
+                        <p>High-density batteries for over 45 minutes of seamless flight.</p>
+                    </div>
+                    <div class="feature-card glass-card">
+                        <img src="{% static 'images/military_grade.jpg' %}" alt="Military Design">
+                        <h3>Rugged Design</h3>
+                        <p>Military-grade durability and weatherproof performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY SECTION -->
+        <section class="story-section">
+            <div class="container story-content">
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <p>
+                        We move forward quietly with focus and belief. Each drone, each design, 
+                        and each innovation reflects our dedication to building India's aerospace legacy.  
+                        Every element of this website is a glimpse into our journey — 
+                        how we transform vision into tangible flight technology.
+                    </p>
+                </div>
+                <div class="story-image">
+                    <img src="{% static 'images/drone_launch.jpg' %}" alt="Drone Launch" class="rounded-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated</h2>
+                    <p>Get the latest updates about our technology, breakthroughs, and innovations.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="cta-button primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    {% include 'footer.html' %}
+</body>
+</html>

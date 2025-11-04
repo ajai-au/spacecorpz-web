@@ -97,47 +97,58 @@
       </div>
     </section>
 
-    <!-- Collaboration Form -->
-    <section class="contact-section fade-in">
-      <div class="container">
-        <h2 class="section-title">Start Collaboration</h2>
-        <p class="text-center">Share your interest with us — let’s build the future together.</p>
+<!-- Collaboration Form -->
+<section class="contact-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Start Collaboration</h2>
+    <p class="text-center">Share your interest with us — let’s build the future together.</p>
 
-        {% if success %}
-          <div class="success-message">✅ Your collaboration request has been sent successfully!</div>
-        {% endif %}
+    {% if success %}
+      <!-- Hidden trigger element for popup -->
+      <div id="collab-success-trigger" data-success="true"></div>
+    {% endif %}
 
-        <form method="POST" class="contact-form">
-          {% csrf_token %}
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" name="name" id="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="company">Company or Organisation Name</label>
-            <input type="text" name="company" id="company" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" name="email" id="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="interest">Area You’re Interested to Collaborate In</label>
-            <input type="text" name="interest" id="interest" required>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Short Note About How You’d Like to Collaborate With Us</label>
-            <textarea name="message" id="message" rows="5" required></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary">Submit Collaboration</button>
-        </form>
+    <form method="POST" class="contact-form">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required>
       </div>
-    </section>
+
+      <div class="form-group">
+        <label for="company">Company or Organisation Name</label>
+        <input type="text" name="company" id="company" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="interest">Area You’re Interested to Collaborate In</label>
+        <input type="text" name="interest" id="interest" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Short Note About How You’d Like to Collaborate With Us</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Submit Collaboration</button>
+    </form>
+  </div>
+</section>
+
+<!-- SUCCESS POPUP -->
+<div id="collab-popup" class="popup-overlay">
+  <div class="popup-content">
+    <h3>✅ Collaboration Request Sent!</h3>
+    <p>Thank you for reaching out. Our team will get back to you soon.</p>
+    <button id="close-popup" class="btn-primary">OK</button>
+  </div>
+</div>
+
 
 
   </main>

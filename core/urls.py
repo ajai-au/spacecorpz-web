@@ -5,9 +5,13 @@ from .views import (
     contact_view,solar_system_view,
     solar_system_testview,about_us_view,
     product_service_view,industry_collaborations_view,
-    careers_view,investor_relation_view
+    careers_view,investor_relation_view,
+    test_view
 )
 from . import views
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -22,5 +26,7 @@ urlpatterns = [
     path('industry_collaborations', industry_collaborations_view, name='industry_collaborations_page'),
     path('careers', careers_view, name='careers_page'),
     path('investor_relation', investor_relation_view, name='investor_relation_page'),
+    path('test', test_view, name='test'),
 
-]
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

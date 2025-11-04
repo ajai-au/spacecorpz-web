@@ -847,3 +847,57 @@ const addCustomCursor = () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = SPACECORPZ;
 }
+
+
+// Collaboration popup handler — put in static/script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("collab-popup");
+  const closeBtn = document.getElementById("close-popup");
+
+  function showPopup() {
+    if (!popup) return;
+    popup.classList.add("show");
+    // Auto hide after 6s
+    clearTimeout(window._collabPopupTimeout);
+    window._collabPopupTimeout = setTimeout(hidePopup, 6000);
+  }
+
+  function hidePopup() {
+    if (!popup) return;
+    popup.classList.remove("show");
+    clearTimeout(window._collabPopupTimeout);
+  }
+
+  // 1) Check for hidden trigger element (server-rendered)
+  const trigger = document.getElementById("collab-success-trigger");
+  if (trigger && trigger.dataset && trigger.dataset.success === "true") {
+    showPopup();
+  } else {
+    // 2) Fallback: check URL for ?success=1 (PRG)
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "1") {
+      // Optionally remove the query param from address to keep URL clean (no reload)
+      const url = new URL(window.location);
+      url.searchParams.delete("success");
+      window.history.replaceState({}, "", url.pathname + url.search);
+      showPopup();
+    }
+  }
+
+  // close button
+  if (closeBtn) {
+    closeBtn.addEventListener("click", hidePopup);
+  }
+
+  // click outside to close
+  if (popup) {
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) hidePopup();
+    });
+  }
+
+  // Esc key closes popup
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") hidePopup();
+  });
+});
