@@ -74,6 +74,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'spacecorpz.wsgi.application'
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
