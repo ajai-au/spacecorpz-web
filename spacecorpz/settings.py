@@ -80,8 +80,19 @@ WSGI_APPLICATION = 'spacecorpz.wsgi.application'
 
 
 DB_LIVE  = os.getenv('DB_LIVE')
+print(DB_LIVE)
 
-if DB_LIVE:
+if DB_LIVE in ['False',False]:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+    print('local')
+        
+else:
+    print('server')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -92,13 +103,8 @@ if DB_LIVE:
             'PORT': os.getenv('DATABASE_PORT')
         }
     }
-else:
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+
+
 
 
 # postgresql://postgres:VHIQFmayZfozTYOcXOobmdFdcJjVbncI@ballast.proxy.rlwy.net:18384/railway
