@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-)j&sgxz(@j@77)f*_0)27=@&x-c*xi)#z814o-a%+@*x48*ul5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['spacecorpz-web-production.up.railway.app', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -146,3 +148,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
 # EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
 
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://spacecorpz-web-production.up.railway.app',
+]
