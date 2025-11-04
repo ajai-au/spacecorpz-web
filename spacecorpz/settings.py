@@ -179,3 +179,8 @@ EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
 CSRF_TRUSTED_ORIGINS = [
     'https://spacecorpz-web-production.up.railway.app',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    'https://spacecorpz-web-production.up.railway.app',
+]
+
