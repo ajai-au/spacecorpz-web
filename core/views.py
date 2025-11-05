@@ -172,7 +172,7 @@ def careers_view(request):
 		body = f"""
 		Dear SPACECORPZ AEROSPACE Team,
 
-		I’m interested in exploring a career opportunity at SPACECORPZ AEROSPACE PRIVATE LIMITED. Please find my details below for your review.
+		I’m interested in exploring a career opportunity at SPACECORPZ AEROSPACE PRIVATE LIMITED.Please find my details below for your review.
 
 		Name: {full_name}
 		Contact: {email_contact}
@@ -188,7 +188,7 @@ def careers_view(request):
 		{full_name}
 		{email_contact}
 		"""
-		recipient = [settings.EMAIL_RECIPIENT]
+		recipient = settings.EMAIL_RECIPIENT
 
 		print(body)
 		print(recipient)
