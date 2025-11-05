@@ -64,16 +64,10 @@ def contact_view(request):
 		{full_name}
 		{email_contact}
 		"""
-		recipient = [settings.EMAIL_RECIPIENT]
+		recipient = settings.EMAIL_RECIPIENT
 
 		try:
-			send_mail(
-				subject=subject,
-				message=body,
-				from_email=settings.DEFAULT_FROM_EMAIL,
-				recipient_list=recipient,
-				fail_silently=False,
-			)
+			send_async_email(subject, body, recipient)
 			# Redirect with success flag
 			url = reverse("contact-page") 
 			form = CollaborationForm()
@@ -132,15 +126,9 @@ def industry_collaborations_view(request):
 					{data['name']}
 					{data['company']}
 				"""
-			recipient = [settings.EMAIL_RECIPIENT]
+			recipient = settings.EMAIL_RECIPIENT
 			try:
-				send_mail(
-					subject=subject,
-					message=body,
-					from_email=settings.DEFAULT_FROM_EMAIL,
-					recipient_list=recipient,
-					fail_silently=False,
-				)
+				send_async_email(subject, body, recipient)
 				# Redirect with success flag
 				url = reverse("industry_collaborations_page") 
 				form = CollaborationForm()
@@ -189,17 +177,8 @@ def careers_view(request):
 		{email_contact}
 		"""
 		recipient = settings.EMAIL_RECIPIENT
-
-		print(body)
-		print(recipient)
 		try:
-			# send_mail(
-			# 	subject=subject,
-			# 	message=body,
-			# 	from_email=settings.DEFAULT_FROM_EMAIL,
-			# 	recipient_list=recipient,
-			# 	fail_silently=False,
-			# )
+
 			send_async_email(subject, body, recipient)
 			# Redirect with success flag
 			url = reverse("careers_page") 
