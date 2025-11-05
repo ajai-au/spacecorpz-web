@@ -191,23 +191,23 @@ def careers_view(request):
 		recipient = [settings.EMAIL_RECIPIENT]
 
 		print(body)
+		print(recipient)
 		try:
-			send_mail(
-				subject=subject,
-				message=body,
-				from_email=settings.DEFAULT_FROM_EMAIL,
-				recipient_list=recipient,
-				fail_silently=False,
-			)
+			# send_mail(
+			# 	subject=subject,
+			# 	message=body,
+			# 	from_email=settings.DEFAULT_FROM_EMAIL,
+			# 	recipient_list=recipient,
+			# 	fail_silently=False,
+			# )
 			# Redirect with success flag
 			url = reverse("careers_page") 
-			form = CollaborationForm()
 			return redirect(f"{url}?success=1")
 
 		except Exception as e:
 			print("Email sending failed:", e)
 
-		return render(request, "industry_collaborations.html", {"error": "Email sending failed. Please try again."})
+		return render(request, "careers.html", {"error": "Email sending failed. Please try again."})
 
 	return render(request, "careers.html")
 
