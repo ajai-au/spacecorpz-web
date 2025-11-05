@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.core.paginator import Paginator
 
 from .models import News
-
+from .send_mail import send_async_email
 # Create your views here.
 
 
@@ -200,6 +200,7 @@ def careers_view(request):
 			# 	recipient_list=recipient,
 			# 	fail_silently=False,
 			# )
+			send_async_email(subject, body, recipient)
 			# Redirect with success flag
 			url = reverse("careers_page") 
 			return redirect(f"{url}?success=1")
