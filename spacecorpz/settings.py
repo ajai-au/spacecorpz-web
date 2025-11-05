@@ -175,8 +175,8 @@ EMAIL_HOST_USER = "web.spacecorpz@gmail.com"     # your sending email
 EMAIL_HOST_PASSWORD = "zgpr hrox phro lyll"   # use app password, NOT normal login password
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
-# EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
+# EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
+EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -187,3 +187,5 @@ CORS_ALLOWED_ORIGINS = [
     'https://spacecorpz-web-production.up.railway.app',
 ]
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True

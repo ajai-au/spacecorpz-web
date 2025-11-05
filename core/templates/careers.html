@@ -101,7 +101,7 @@
       <div id="collab-success-trigger" data-success="true"></div>
     {% endif %}
 
-    <form method="POST" class="contact-form">
+    <form method="POST"  action="{% url 'careers_page' %}" class="contact-form">
       {% csrf_token %}
                  
                 <div class="form-group">
