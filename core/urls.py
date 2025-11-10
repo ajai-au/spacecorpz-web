@@ -23,11 +23,11 @@ urlpatterns = [
     path('careers', careers_view, name='careers_page'),
     path('investor_relation', investor_relation_view, name='investor_relation_page'),
 
-    # path('gallery', gallery_view, name='gallery-page'),
-    # path('test', test_view, name='test'),
-    # path('faq', faq_view, name='faq-page'),
-    # path('solar_system', solar_system_view, name='solar_system_page'),
-    # path('solar_system_test', solar_system_testview, name='solar_test_page'),
+    path('gallery', gallery_view, name='gallery-page'),
+    path('test', test_view, name='test'),
+    path('faq', faq_view, name='faq-page'),
+    path('solar_system', solar_system_view, name='solar_system_page'),
+    path('solar_system_test', solar_system_testview, name='solar_test_page'),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
