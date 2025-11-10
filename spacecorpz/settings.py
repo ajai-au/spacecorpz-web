@@ -155,29 +155,29 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
 
-if USE_S3 == True:
+# if USE_S3 == True:
 
-    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_S3_BUCKET")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_S3_BUCKET")
 
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
-    AWS_DEFAULT_ACL = None
-    AWS_QUERYSTRING_AUTH = False  # No auth tokens in URLs
-    PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
-    DEFAULT_FILE_STORAGE = 'spacecorpz.storage_backends.PublicMediaStorage'
-    STATIC_URL = 'static/'
-    STATIC_URL = '/static/'
-    STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
-else:
-    STATIC_URL = 'static/'
-    STATIC_URL = '/static/'
-    STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
+AWS_DEFAULT_ACL = None
+AWS_QUERYSTRING_AUTH = False  # No auth tokens in URLs
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+DEFAULT_FILE_STORAGE = 'spacecorpz.storage_backends.PublicMediaStorage'
+# STATIC_URL = 'static/'
+# STATIC_URL = '/static/'
+# STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
+# else:
+STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
 
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 
 
 
