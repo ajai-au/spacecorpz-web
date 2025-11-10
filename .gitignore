@@ -15,8 +15,8 @@ pip-log.txt
 # Logs and databases
 logs/
 *.log
-*.sqlite3
-*.db
+# *.sqlite3
+# *.db
 
 # Docker
 .dockerignore
@@ -36,10 +36,12 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.db
-*.sqlite3
+# *.db
+# *.sqlite3
 .env
 .git/
 .vscode/
 .idea/
 tests/
+
+*.png

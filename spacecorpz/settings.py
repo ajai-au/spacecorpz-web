@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)j&sgxz(@j@77)f*_0)27=@&x-c*xi)#z814o-a%+@*x48*ul5'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,6 @@ AUTHENTICATION_BACKENDS = [
 
 
 DB_LIVE  = os.getenv('DB_LIVE')
-print(DB_LIVE)
 
 if DB_LIVE in ['False',False]:
     DATABASES = {
@@ -92,10 +92,8 @@ if DB_LIVE in ['False',False]:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-    print('local')
         
 else:
-    print('server')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -147,23 +145,40 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATIC_URL = '/static/'
-STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+USE_S3 = os.getenv('USE_S3') == 'TRUE'
 
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+if USE_S3 == True:
 
-# LOGIN_REDIRECT_URL = 'blog-home'
-# LOGIN_URL = 'login'
+    AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+    AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+    AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_S3_BUCKET")
+
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+    AWS_DEFAULT_ACL = None
+    AWS_QUERYSTRING_AUTH = False  # No auth tokens in URLs
+    PUBLIC_MEDIA_LOCATION = 'media'
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+    DEFAULT_FILE_STORAGE = 'spacecorpz.storage_backends.PublicMediaStorage'
+    STATIC_URL = 'static/'
+    STATIC_URL = '/static/'
+    STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
+else:
+    STATIC_URL = 'static/'
+    STATIC_URL = '/static/'
+    STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+
 
 
 # Email configuration
@@ -171,12 +186,12 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"       # or your SMTP host (e.g., smtp.zoho.com, smtp.office365.com)
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "web.spacecorpz@gmail.com"     # your sending email
-EMAIL_HOST_PASSWORD = "zgpr hrox phro lyll"   # use app password, NOT normal login password
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")     # your sending email
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")   # use app password, NOT normal login password
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
-# EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
+# EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
+EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
 
 
 CSRF_TRUSTED_ORIGINS = [

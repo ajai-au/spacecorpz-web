@@ -1,6 +1,14 @@
 from django.db import models
+from storages.backends.s3boto3 import S3Boto3Storage
 
 # Create your models here.
+
+class PublicMediaStorage(S3Boto3Storage):
+    location = 'media'
+    default_acl = None  
+    file_overwrite = False
+
+
 class News(models.Model):
     CATEGORY_CHOICES = [
         ('technology', 'Technology'),
@@ -11,7 +19,7 @@ class News(models.Model):
 
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to='news_images/')
+    image = models.FileField(storage=PublicMediaStorage(),default=None)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
