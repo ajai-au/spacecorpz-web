@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['13.233.6.139','172.31.3.69','spacecorpzaerospace.com','localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["13.233.6.139","172.31.3.69","spacecorpzaerospace.com","localhost", "127.0.0.1"]
 
 
 
