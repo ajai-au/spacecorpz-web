@@ -173,7 +173,7 @@ DEFAULT_FILE_STORAGE = 'spacecorpz.storage_backends.PublicMediaStorage'
 # STATIC_ROOT= os.path.join(BASE_DIR, 'static'),
 # else:
 STATIC_URL = '/static/'
-STATIC_ROOT = (os.path.join(BASE_DIR, 'static')),
+STATIC_ROOT = (os.path.join(BASE_DIR, 'static'))
 
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
