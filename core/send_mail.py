@@ -37,7 +37,8 @@ def send_async_send_email(subject, body, recipient):
             subject=subject,
             message=body,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=recipient,
+            recipient_list=[recipient],
             fail_silently=False,
         )
-    Thread(target=_send).start()
+    # Thread(target=_send).start()
+    _send()
