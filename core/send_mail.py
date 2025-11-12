@@ -40,5 +40,4 @@ def send_async_send_email(subject, body, recipient):
             recipient_list=[recipient],
             fail_silently=False,
         )
-    # Thread(target=_send).start()
-    _send()
+    Thread(target=_send).start()
