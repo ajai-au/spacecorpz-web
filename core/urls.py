@@ -6,11 +6,15 @@ from .views import (
     solar_system_testview,about_us_view,
     product_service_view,industry_collaborations_view,
     careers_view,investor_relation_view,
-    test_view
+    test_view,StaticViewSitemap
 )
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.sitemaps.views import sitemap
+
+
+sitemaps = {'static': StaticViewSitemap}
 
 
 urlpatterns = [
@@ -28,6 +32,6 @@ urlpatterns = [
     path('faq', faq_view, name='faq-page'),
     path('solar_system', solar_system_view, name='solar_system_page'),
     path('solar_system_test', solar_system_testview, name='solar_test_page'),
-
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

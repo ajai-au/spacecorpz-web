@@ -5,6 +5,7 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.core.paginator import Paginator
+from django.contrib.sitemaps import Sitemap
 
 from .models import News
 from .send_mail import send_async_email
@@ -201,3 +202,12 @@ def investor_relation_view(request):
 def test_view(request):
 
 	return render(request, 'test.html')
+
+
+class StaticViewSitemap(Sitemap):
+    def items(self):
+        return ['home', 'news', 'contact','about_us','product_service','industry_collaborations',
+				'careers','investor_relation']  # names of URL patterns
+
+    def location(self, item):
+        return reverse(item)
