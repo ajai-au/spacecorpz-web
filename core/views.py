@@ -206,8 +206,8 @@ def test_view(request):
 
 class StaticViewSitemap(Sitemap):
     def items(self):
-        return ['home', 'news', 'contact','about_us','product_service','industry_collaborations',
-				'careers','investor_relation']  # names of URL patterns
+        return ['home', 'news-page', 'contact-page','about_us_page','product_service_page','industry_collaborations_page',
+				'careers_page','investor_relation_page']  # names of URL patterns
 
     def location(self, item):
         return reverse(item)
