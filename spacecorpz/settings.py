@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ["13.233.6.139","172.31.3.69","spacecorpzaerospace.com","localhost", "127.0.0.1"]
@@ -191,8 +191,8 @@ EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")     # your sending email
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")   # use app password, NOT normal login password
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-# EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
-EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
+EMAIL_RECIPIENT = "connect.spacecorpzaerospace@gmail.com"
+# EMAIL_RECIPIENT = "ajaiauconnect@gmail.com"
 
 
 CSRF_TRUSTED_ORIGINS = [
