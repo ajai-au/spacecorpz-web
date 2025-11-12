@@ -12,6 +12,7 @@ from . import views
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic import RedirectView
 
 
 sitemaps = {
@@ -29,6 +30,9 @@ urlpatterns = [
     path('industry_collaborations', industry_collaborations_view, name='industry_collaborations_page'),
     path('careers', careers_view, name='careers_page'),
     path('investor_relation', investor_relation_view, name='investor_relation_page'),
+    
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon_ico.ico',permanent=True)),
+
 
     path('gallery', gallery_view, name='gallery-page'),
     path('test', test_view, name='test'),

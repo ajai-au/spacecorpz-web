@@ -27,3 +27,17 @@ def send_async_email(subject, body, recipient):
             print(e,'aaaaaaaaa')
             print(e.message)
     Thread(target=_send).start()
+
+
+
+def send_async_send_email(subject, body, recipient):
+
+    def _send():
+        send_mail(
+            subject=subject,
+            message=body,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=recipient,
+            fail_silently=False,
+        )
+    Thread(target=_send).start()

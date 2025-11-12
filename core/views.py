@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 from django.contrib.sitemaps import Sitemap
 
 from .models import News
-from .send_mail import send_async_email
+from .send_mail import send_async_send_email
 # Create your views here.
 
 
@@ -68,7 +68,7 @@ def contact_view(request):
 		recipient = settings.EMAIL_RECIPIENT
 
 		try:
-			send_async_email(subject, body, recipient)
+			send_async_send_email(subject, body, recipient)
 			# Redirect with success flag
 			url = reverse("contact-page") 
 			form = CollaborationForm()
@@ -129,7 +129,7 @@ def industry_collaborations_view(request):
 				"""
 			recipient = settings.EMAIL_RECIPIENT
 			try:
-				send_async_email(subject, body, recipient)
+				send_async_send_email(subject, body, recipient)
 				# Redirect with success flag
 				url = reverse("industry_collaborations_page") 
 				form = CollaborationForm()
@@ -180,7 +180,7 @@ def careers_view(request):
 		recipient = settings.EMAIL_RECIPIENT
 		try:
 
-			send_async_email(subject, body, recipient)
+			send_async_send_email(subject, body, recipient)
 			# Redirect with success flag
 			url = reverse("careers_page") 
 			return redirect(f"{url}?success=1")
