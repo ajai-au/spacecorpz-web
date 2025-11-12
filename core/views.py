@@ -205,9 +205,23 @@ def test_view(request):
 
 
 class StaticViewSitemap(Sitemap):
-    def items(self):
-        return ['home', 'news-page', 'contact-page','about_us_page','product_service_page','industry_collaborations_page',
-				'careers_page','investor_relation_page']  # names of URL patterns
+	priority = 0.8
+	changefreq = 'weekly'
 
-    def location(self, item):
-        return reverse(item)
+	def items(self):
+		return ['home', 'contact-page','about_us_page','product_service_page','industry_collaborations_page',
+				'careers_page','investor_relation_page'] 
+
+	def location(self, item):
+		return reverse(item)
+	
+
+# class PostSitemap(Sitemap):
+# 	changefreq = "weekly"
+# 	priority = 0.8
+	
+# 	def items(self):
+# 		return News.objects.all()
+
+# 	def lastmod(self, obj):
+# 		return obj.updated_at

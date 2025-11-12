@@ -1,5 +1,7 @@
 from django.db import models
 from storages.backends.s3boto3 import S3Boto3Storage
+from django.urls import reverse
+
 
 # Create your models here.
 
@@ -26,6 +28,10 @@ class News(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+    
+    # def get_absolute_url(self):
+    #     # assuming your URL pattern name is 'news_detail'
+    #     return reverse('news-page', args=[self.slug])
 
     def __str__(self):
         return self.title
