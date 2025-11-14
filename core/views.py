@@ -155,6 +155,7 @@ def careers_view(request):
 		interest = request.POST.get("interest")
 		experience = request.POST.get("experience")
 		reason = request.POST.get("reason")
+		resume_file = request.FILES.get("resume")
 
 
 		subject = f"Job Application from {full_name}"
@@ -180,7 +181,7 @@ def careers_view(request):
 		recipient = settings.EMAIL_RECIPIENT
 		try:
 
-			send_async_send_email(subject, body, recipient)
+			send_async_send_email(subject, body, recipient,resume_file)
 			# Redirect with success flag
 			url = reverse("careers_page") 
 			return redirect(f"{url}?success=1")

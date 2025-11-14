@@ -4,6 +4,7 @@ from threading import Thread
 from django.conf import settings
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail,Content
+from django.core.mail import EmailMessage
 
 
 def send_async_email(subject, body, recipient):
@@ -30,14 +31,16 @@ def send_async_email(subject, body, recipient):
 
 
 
-def send_async_send_email(subject, body, recipient):
+def send_async_send_email(subject, body, recipient,resume_file=None):
 
     def _send():
-        send_mail(
+        email = EmailMessage(
             subject=subject,
-            message=body,
+            body=body,
             from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[recipient],
-            fail_silently=False,
+            to=[recipient]
         )
+        if resume_file:
+            email.attach(resume_file.name, resume_file.read(), resume_file.content_type)
+        email.send(fail_silently=False)
     Thread(target=_send).start()
